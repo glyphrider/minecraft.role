@@ -1,5 +1,5 @@
 ---
-- import_tasks: java
+- import_tasks: java.yml
 
 - name: create minecraft user
   user:
