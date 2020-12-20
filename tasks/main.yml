@@ -1,7 +1,6 @@
 ---
 - name: java
-  import_tasks:
-    - java
+  import_tasks: java
 
 - name: create minecraft user
   user:
