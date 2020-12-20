@@ -1,0 +1,20 @@
+---
+- name: Java
+  debug:
+    msg: "Installing openjdk v8 for distribution {{ ansible_facts['distribution'] }}"
+
+- name: install openjdk-8-jre-headless (apt)
+  apt:
+    name: openjdk-8-jre-headless
+    state: present
+    update_cache: yes
+  become: yes
+  when: (ansible_facts['distribution'] == "Debian" or ansible_facts['distribution'] == "Ubuntu")
+
+- name: install java-1.8.0-openjdk-headless (yum)
+  yum:
+    name: java-1.8.0-openjdk-headless
+    state: present
+    update_cache: yes
+  become: yes
+  when: (ansible_facts['distribution'] == "CentOS" or ansible_facts['distribution'] == "RedHat")
