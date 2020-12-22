@@ -48,7 +48,7 @@
   uri:
     url: "https://x2kjkpfk10.execute-api.us-east-2.amazonaws.com/brian/ops"
     method: "POST"
-    src: "users.json"
+    src: "operators.json"
     dest: "{{ INSTALL_ROOT }}/ops.json"
     remote_src: no
   become: yes
