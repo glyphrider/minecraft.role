@@ -37,7 +37,7 @@
 
 - name: whitelist.json
   uri:
-    url: "{{ SLS_WHITELIST_ENDPOINT }}"
+    url: "{{ lookup('env','SLS_WHITELIST_ENDPOINT') }}"
     method: "POST"
     src: "users.json"
     dest: "{{ INSTALL_ROOT }}/whitelist.json"
@@ -46,7 +46,7 @@
 
 - name: ops.json
   uri:
-    url: "{{ SLS_OPS_ENDPOINT }}"
+    url: "{{ lookup('env','SLS_OPS_ENDPOINT') }}"
     method: "POST"
     src: "operators.json"
     dest: "{{ INSTALL_ROOT }}/ops.json"
