@@ -36,17 +36,21 @@
   become: yes
 
 - name: whitelist.json
-  copy:
-    src: "whitelist.json"
-    dest: "{{ INSTALL_ROOT }}"
-    remote_src: no
+  uri:
+    url: "https://x2kjkpfk10.execute-api.us-east-2.amazonaws.com/brian/whitelist"
+    method: "POST"
+    src: "users.json"
+    dest: "{{ INSTALL_ROOT }}/whitelist.json"
+    remote_src: yes
   become: yes
 
 - name: ops.json
-  copy:
-    src: "ops.json"
-    dest: "{{ INSTALL_ROOT }}"
-    remote_src: no
+  uri:
+    url: "https://x2kjkpfk10.execute-api.us-east-2.amazonaws.com/brian/ops"
+    src: "POST"
+    src: "users.json"
+    dest: "{{ INSTALL_ROOT }}/ops.json"
+    remote_src: yes
   become: yes
 
 - name: check for eula.txt
