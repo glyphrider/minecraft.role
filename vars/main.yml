@@ -1,5 +1,3 @@
 ---
 INSTALL_ROOT: "/opt/minecraft"
 MINECRAFT_USER: "minecraft"
-SLS_OPS_ENDPOINT: "{{ lookup('env','SLS_OPS_ENDPOINT') }}"
-SLS_WHITELIST_ENDPOING: "{{ lookup('env','SLS_WHITELIST_ENDPOINT') }}"
