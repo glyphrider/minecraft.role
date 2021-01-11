@@ -9,7 +9,7 @@
     state: present
     update_cache: yes
   become: yes
-  when: (ansible_facts['distribution'] == "Debian" or ansible_facts['distribution'] == "Ubuntu")
+  when: (ansible_facts['os_family'] == "Debian")
 
 - name: install java-1.8.0-openjdk-headless (yum)
   yum:
@@ -17,4 +17,4 @@
     state: present
     update_cache: yes
   become: yes
-  when: (ansible_facts['distribution'] == "CentOS" or ansible_facts['distribution'] == "RedHat")
+  when: (ansible_facts['os_family'] == "RedHat")
